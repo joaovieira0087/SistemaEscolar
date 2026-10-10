@@ -8,22 +8,29 @@ namespace SistemaEscolar
 {
      public class Professor
      {
-        public int Id { get; set; }
         public string NomeProfessor { get; set; }
+        public string Diciplina { get; set; }
+        public int Idade { get; set; }
+        public string Email { get; set; }
+        public int CargaHorariaSemanal { get; set; }
+        public int Salario { get; private set; }
 
-        public Professor()
+        public Professor(string nome, string diciplina, int idade, string email, int cargasemanal, int salario)
         {
+            nome = NomeProfessor;
+            diciplina = Diciplina;
+            idade = Idade;
+            email = Email;
+            cargasemanal = CargaHorariaSemanal;
+            salario = Salario;
         }
 
-        public Professor(string nome_professor)
+        public Professor(string nome, string diciplina, int idade, int salario)
         {
-            NomeProfessor = nome_professor;
+            nome = NomeProfessor;
+            diciplina = Diciplina;
+            idade = Idade;
+            salario = Salario;
         }
-
-        public Professor (int id ,string nome_professor)
-        {
-            Id = id;
-            NomeProfessor = nome_professor;
-        }
-     }
+    }
 }   
