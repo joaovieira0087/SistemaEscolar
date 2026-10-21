@@ -15,22 +15,24 @@ namespace SistemaEscolar
         public int CargaHorariaSemanal { get; set; }
         public int Salario { get; private set; }
 
-        public Professor(string nome, string diciplina, int idade, string email, int cargasemanal, int salario)
+        public Professor(string nome, string diciplina, int idade, int salario, string email, int cargasemanal)
         {
-            nome = NomeProfessor;
-            diciplina = Diciplina;
-            idade = Idade;
-            email = Email;
-            cargasemanal = CargaHorariaSemanal;
-            salario = Salario;
+            NomeProfessor = nome;
+            Diciplina = diciplina;
+            Idade = idade;
+            Email = email;
+            CargaHorariaSemanal = cargasemanal;
+            Salario = salario;
         }
 
         public Professor(string nome, string diciplina, int idade, int salario)
         {
-            nome = NomeProfessor;
-            diciplina = Diciplina;
-            idade = Idade;
-            salario = Salario;
+            NomeProfessor = nome;
+            Diciplina = diciplina;
+            Idade = idade;
+            Salario = salario;
         }
+
+        
     }
 }   
