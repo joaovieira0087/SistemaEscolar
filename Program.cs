@@ -12,12 +12,14 @@ namespace SistemaEscolar
         static void Main(string[] args)
         {
             List<Professor> listaProfessor = new List<Professor>();
+            RegrasBasicas regrasBasicas = new RegrasBasicas();
             
             while (true)
             {
                 int op;
                 Console.WriteLine("1 - Cadastrar Professor");
                 Console.WriteLine("2 - Lista Aluno");
+                Console.WriteLine();
                 op = int.Parse(Console.ReadLine());
 
                 switch (op)
@@ -69,8 +71,9 @@ namespace SistemaEscolar
                         {
                             foreach (Professor prof in listaProfessor)
                             {
-                                for(int i = 0; i < listaProfessor.Count; i++)
-                                Console.WriteLine(i + prof.NomeProfessor);  
+                                for(int i = 1; i < listaProfessor.Count; i++)
+                                    Console.WriteLine($"{regrasBasicas.RegrasBasicasLista()} {prof.NomeProfessor}");
+
                             }
                         }
 
