@@ -76,13 +76,13 @@ namespace SistemaEscolar
                             int quant = listaProfessor.Count;
                             foreach (Professor prof in listaProfessor)
                             {
-                                Console.WriteLine($"{regrasBasicas.ProximaPosicao()}. " +
-                                    $"{"Nome: " + prof.NomeProfessor}" +
-                                    $"{ "Displina: " + prof.Diciplina}" +
-                                    $"{ "Idade: : " + prof.Idade}" +
-                                    $"{ "Salario: : " + prof.Salario}" +
-                                    $"{ "Carga Hora:" + prof.CargaHorariaSemanal}" +
-                                    $"{ "Email: : " + prof.Email}"
+                                Console.WriteLine($"{regrasBasicas.ProximaPosicao()} " +
+                                    $"{"Nome:" + prof.NomeProfessor} " +
+                                    $" { "Displina:" + prof.Diciplina}" +
+                                    $" { "Idade:" + prof.Idade}" +
+                                    $" { "Salario:" + prof.Salario}" +
+                                    $" { "Carga-Hora:" + prof.CargaHorariaSemanal}" +
+                                    $" { "Email:" + prof.Email}"
                                     );
 
                             }
