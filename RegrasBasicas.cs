@@ -6,16 +6,28 @@ using System.Threading.Tasks;
 
 namespace SistemaEscolar
 {
-    public class RegrasBasicas
+    namespace SistemaEscolar
     {
-        public int RegrasBasicasLista()
+        public class RegrasBasicas
         {
-            List<Professor> listaProfessor = new List<Professor>();
-            for (int i = 1; i < listaProfessor.Count; i++)
+            private int contador = 1;
+
+            public int ProximaPosicao()
             {
-                return i;
+                int posicaoAtual = contador;
+                contador++;
+                return posicaoAtual;
             }
-            return 0;
+
+            public string Espacamento()
+            {
+                return "-----------------";
+            }
+
+            public void ReiniciarContador()
+            {
+                contador = 1;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEscolar.SistemaEscolar;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -13,13 +14,13 @@ namespace SistemaEscolar
         {
             List<Professor> listaProfessor = new List<Professor>();
             RegrasBasicas regrasBasicas = new RegrasBasicas();
-            
+
             while (true)
             {
                 int op;
                 Console.WriteLine("1 - Cadastrar Professor");
                 Console.WriteLine("2 - Lista Aluno");
-                Console.WriteLine();
+                Console.WriteLine(regrasBasicas.Espacamento());
                 op = int.Parse(Console.ReadLine());
 
                 switch (op)
@@ -27,16 +28,16 @@ namespace SistemaEscolar
                     case 1:
                         Console.Write("nome:");
                         string Nome = Console.ReadLine();
-                        Console.WriteLine();
+                        Console.WriteLine(regrasBasicas.Espacamento());
                         Console.Write("Diciplina: ");
                         string Diciplina = Console.ReadLine();
-                        Console.WriteLine();
+                        Console.WriteLine(regrasBasicas.Espacamento());
                         Console.Write("Idade: ");
                         int Idade = int.Parse(Console.ReadLine());
-                        Console.WriteLine();
+                        Console.WriteLine(regrasBasicas.Espacamento());
                         Console.Write("Salario:");
                         int Salario = int.Parse(Console.ReadLine());
-                        Console.WriteLine();
+                        Console.WriteLine(regrasBasicas.Espacamento());
                         Console.WriteLine("Você prencheu as informações obrigatorias");
                         Console.WriteLine("Deseja inserir as opcionais (s/n)");
                         char sn = char.Parse(Console.ReadLine());
@@ -45,11 +46,13 @@ namespace SistemaEscolar
                         {
                             Console.Write("Email: ");
                             string Email = Console.ReadLine();
-                            Console.Write("Carga Horaria Semanal");
+                            Console.WriteLine(regrasBasicas.Espacamento());
+                            Console.Write("Carga Horaria Semanal: ");
                             int CargaHorariaSemanal = int.Parse(Console.ReadLine());
-                            Console.WriteLine();
+                            Console.WriteLine(regrasBasicas.Espacamento());
                             Professor novoProfessor = new Professor(Nome, Diciplina, Idade, Salario, Email, CargaHorariaSemanal);
                             listaProfessor.Add(novoProfessor);
+                            Console.WriteLine();
                         }
                         else
                         {
@@ -69,17 +72,27 @@ namespace SistemaEscolar
                         }
                         else
                         {
+                            regrasBasicas.ReiniciarContador();
+                            int quant = listaProfessor.Count;
                             foreach (Professor prof in listaProfessor)
                             {
-                                for(int i = 1; i < listaProfessor.Count; i++)
-                                    Console.WriteLine($"{regrasBasicas.RegrasBasicasLista()} {prof.NomeProfessor}");
+                                Console.WriteLine($"{regrasBasicas.ProximaPosicao()}. " +
+                                    $"{prof.NomeProfessor}" +
+                                    $"{"Displina: " + prof.Diciplina}" +
+                                    $"{"Idade: : " + prof.Idade}" +
+                                    $"{"Salario: : " + prof.Salario}" +
+                                    $"{"Carga Hora:" + prof.CargaHorariaSemanal}" +
+                                    $"{"Email: : " + prof.Email}"
+                                    );
 
                             }
-                        }
 
-                        break;
+                            Console.WriteLine();
+                        }
+                    break;      
                 }
             }
         }
     }
 }
+
