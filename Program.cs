@@ -63,7 +63,7 @@ namespace SistemaEscolar
                         break;
 
                     case 2:
-                        Console.WriteLine("Lista Professores");
+                        Console.WriteLine("Lista Professores: ");
 
                         if (listaProfessor.Count == 0)
                         {
@@ -77,12 +77,12 @@ namespace SistemaEscolar
                             foreach (Professor prof in listaProfessor)
                             {
                                 Console.WriteLine($"{regrasBasicas.ProximaPosicao()}. " +
-                                    $"{prof.NomeProfessor}" +
-                                    $"{"Displina: " + prof.Diciplina}" +
-                                    $"{"Idade: : " + prof.Idade}" +
-                                    $"{"Salario: : " + prof.Salario}" +
-                                    $"{"Carga Hora:" + prof.CargaHorariaSemanal}" +
-                                    $"{"Email: : " + prof.Email}"
+                                    $"{"Nome: " + prof.NomeProfessor}" +
+                                    $"{ "Displina: " + prof.Diciplina}" +
+                                    $"{ "Idade: : " + prof.Idade}" +
+                                    $"{ "Salario: : " + prof.Salario}" +
+                                    $"{ "Carga Hora:" + prof.CargaHorariaSemanal}" +
+                                    $"{ "Email: : " + prof.Email}"
                                     );
 
                             }
