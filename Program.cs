@@ -19,14 +19,16 @@ namespace SistemaEscolar
             {
                 int op;
                 Console.WriteLine("1 - Cadastrar Professor");
-                Console.WriteLine("2 - Lista Aluno");
+                Console.WriteLine("2 - Lista Professor");
+                Console.WriteLine("3 - Excluir Professor");
                 Console.WriteLine(regrasBasicas.Espacamento());
+                Console.Write("Opção: ");
                 op = int.Parse(Console.ReadLine());
 
                 switch (op)
                 {
                     case 1:
-                        Console.Write("nome:");
+                        Console.Write("nome: ");
                         string Nome = Console.ReadLine();
                         Console.WriteLine(regrasBasicas.Espacamento());
                         Console.Write("Diciplina: ");
@@ -35,8 +37,8 @@ namespace SistemaEscolar
                         Console.Write("Idade: ");
                         int Idade = int.Parse(Console.ReadLine());
                         Console.WriteLine(regrasBasicas.Espacamento());
-                        Console.Write("Salario:");
-                        int Salario = int.Parse(Console.ReadLine());
+                        Console.Write("Salario: ");
+                        double Salario = int.Parse(Console.ReadLine());
                         Console.WriteLine(regrasBasicas.Espacamento());
                         Console.WriteLine("Você prencheu as informações obrigatorias");
                         Console.WriteLine("Deseja inserir as opcionais (s/n)");
@@ -72,24 +74,17 @@ namespace SistemaEscolar
                         }
                         else
                         {
-                            regrasBasicas.ReiniciarContador();
-                            int quant = listaProfessor.Count;
-                            foreach (Professor prof in listaProfessor)
-                            {
-                                Console.WriteLine($"{regrasBasicas.ProximaPosicao()} " +
-                                    $"{"Nome:" + prof.NomeProfessor} " +
-                                    $" { "Displina:" + prof.Diciplina}" +
-                                    $" { "Idade:" + prof.Idade}" +
-                                    $" { "Salario:" + prof.Salario}" +
-                                    $" { "Carga-Hora:" + prof.CargaHorariaSemanal}" +
-                                    $" { "Email:" + prof.Email}"
-                                    );
 
-                            }
-
+                            Professor.ListaProfessor(listaProfessor);
                             Console.WriteLine();
                         }
-                    break;      
+                    break;
+
+                    case 3:
+                        Console.WriteLine();
+                        Console.WriteLine("Excluir Professor");
+
+                    break;
                 }
             }
         }

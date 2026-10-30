@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEscolar.SistemaEscolar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,9 @@ namespace SistemaEscolar
         public int Idade { get; set; }
         public string Email { get; set; }
         public int CargaHorariaSemanal { get; set; }
-        public int Salario { get; private set; }
+        public double Salario { get; private set; }
 
-        public Professor(string nome, string diciplina, int idade, int salario, string email, int cargasemanal)
+        public Professor(string nome, string diciplina, int idade, double salario, string email, int cargasemanal)
         {
             NomeProfessor = nome;
             Diciplina = diciplina;
@@ -25,7 +26,7 @@ namespace SistemaEscolar
             Salario = salario;
         }
 
-        public Professor(string nome, string diciplina, int idade, int salario)
+        public Professor(string nome, string diciplina, int idade, double salario)
         {
             NomeProfessor = nome;
             Diciplina = diciplina;
@@ -33,6 +34,25 @@ namespace SistemaEscolar
             Salario = salario;
         }
 
-        
+        public static void ListaProfessor(List<Professor> professor)
+        {
+            RegrasBasicas regrasBasicas = new RegrasBasicas();
+
+            regrasBasicas.ReiniciarContador();
+            int quant = professor.Count;
+            foreach (Professor prof in professor)
+            {
+                Console.WriteLine($"{regrasBasicas.ProximaPosicao()} - " +
+                    $"{"Nome:" + prof.NomeProfessor} " +
+                    $"{"Displina:" + prof.Diciplina}" +
+                    $" {"Idade:" + prof.Idade}" +
+                    $" {"Salario:" + prof.Salario.ToString("F2")}" +
+                    $" {"Carga-Hora:" + prof.CargaHorariaSemanal}" +
+                    $" {"Email:" + prof.Email}"
+                    );
+            }
+        }
+
+
     }
 }   
