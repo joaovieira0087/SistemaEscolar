@@ -1,6 +1,7 @@
 ﻿using SistemaEscolar.SistemaEscolar;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,12 +47,14 @@ namespace SistemaEscolar
                     $"{"Nome:" + prof.NomeProfessor} " +
                     $"{"Displina:" + prof.Diciplina}" +
                     $" {"Idade:" + prof.Idade}" +
-                    $" {"Salario:" + prof.Salario.ToString("F2")}" +
+                    $" {"Salario:" + prof.Salario.ToString("F2", CultureInfo.InvariantCulture)}" +
                     $" {"Carga-Hora:" + prof.CargaHorariaSemanal}" +
                     $" {"Email:" + prof.Email}"
                     );
             }
         }
+
+        public 
 
 
     }

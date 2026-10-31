@@ -28,6 +28,7 @@ namespace SistemaEscolar
                 switch (op)
                 {
                     case 1:
+                        Console.Clear();
                         Console.Write("nome: ");
                         string Nome = Console.ReadLine();
                         Console.WriteLine(regrasBasicas.Espacamento());
@@ -38,11 +39,12 @@ namespace SistemaEscolar
                         int Idade = int.Parse(Console.ReadLine());
                         Console.WriteLine(regrasBasicas.Espacamento());
                         Console.Write("Salario: ");
-                        double Salario = int.Parse(Console.ReadLine());
+                        double Salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                         Console.WriteLine(regrasBasicas.Espacamento());
                         Console.WriteLine("Você prencheu as informações obrigatorias");
                         Console.WriteLine("Deseja inserir as opcionais (s/n)");
                         char sn = char.Parse(Console.ReadLine());
+                        Console.Clear();
 
                         if (sn == 's')
                         {
@@ -61,10 +63,12 @@ namespace SistemaEscolar
                             Professor novoProfessor = new Professor(Nome, Diciplina, Idade, Salario);
                             listaProfessor.Add(novoProfessor);
                             Console.WriteLine();
+                            Console.Clear();
                         }
                         break;
 
                     case 2:
+                        Console.Clear();
                         Console.WriteLine("Lista Professores: ");
 
                         if (listaProfessor.Count == 0)
@@ -76,15 +80,21 @@ namespace SistemaEscolar
                         {
 
                             Professor.ListaProfessor(listaProfessor);
-                            Console.WriteLine();
+                            Console.WriteLine(); 
                         }
                     break;
 
                     case 3:
-                        Console.WriteLine();
+                        Console.Clear();
                         Console.WriteLine("Excluir Professor");
+                        Professor.ListaProfessor(listaProfessor);
+                        Console.WriteLine();
+                        Console.Write("Escolha o numero que sera excluido: ");
+                        op = int.Parse(Console.ReadLine());
 
-                    break;
+                        Professor.
+
+                        break;
                 }
             }
         }
