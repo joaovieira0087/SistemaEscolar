@@ -43,10 +43,10 @@ namespace SistemaEscolar
                         Console.WriteLine(regrasBasicas.Espacamento());
                         Console.WriteLine("Você prencheu as informações obrigatorias");
                         Console.WriteLine("Deseja inserir as opcionais (s/n)");
-                        char sn = char.Parse(Console.ReadLine());
+                        string sn = Console.ReadLine()?.ToUpper();
                         Console.Clear();
 
-                        if (sn == 's')
+                        if (sn == "S")
                         {
                             Console.Write("Email: ");
                             string Email = Console.ReadLine();
@@ -89,18 +89,33 @@ namespace SistemaEscolar
                         Console.WriteLine("Excluir Professor");
                         Professor.ListaProfessor(listaProfessor);
                         Console.WriteLine();
-                        Console.Write("Escolha o numero que sera excluido: ");
-                        op = int.Parse(Console.ReadLine());
 
-                        bool sucesso = Professor.ExcluirProfessor(listaProfessor, op);
-                        Console.WriteLine();
-                        if (sucesso) {
-                            Console.WriteLine("Professor Excluido");
-                        } else { 
-                            Console.WriteLine("Erro ao Excluir");   
-                        }
+                        bool excluidoComSucesso = false;
 
-                        Console.WriteLine();
+                        do
+                        {
+                            Console.Write("Escolha o número que será excluído: ");
+                            if (int.TryParse(Console.ReadLine(), out op))
+                            {
+                                excluidoComSucesso = Professor.ExcluirProfessor(listaProfessor, op);
+
+                                if (excluidoComSucesso)
+                                {
+                                    Console.WriteLine("Professor excluído com sucesso!");
+                                    Console.WriteLine();
+                                    break; 
+                                }
+
+                                Console.WriteLine("Erro ao excluir. Número não encontrado.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Número inválido.");
+                            }
+
+                            Console.Write("Tente novamente (s/n): ");
+
+                        } while (Console.ReadLine()?.ToUpper() == "S");
 
                         break;
                 }
