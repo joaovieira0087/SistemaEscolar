@@ -54,8 +54,15 @@ namespace SistemaEscolar
             }
         }
 
-        public 
-
-
-    }
+        public static bool ExcluirProfessor(List<Professor> professor, int op)
+        {
+            int opcao = op - 1;
+            if (opcao >= 0 && opcao < professor.Count)
+            { 
+                professor.RemoveAt(opcao);
+                return true;
+            }
+            return false;
+        }      
+     }
 }   

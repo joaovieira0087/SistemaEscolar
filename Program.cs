@@ -92,7 +92,15 @@ namespace SistemaEscolar
                         Console.Write("Escolha o numero que sera excluido: ");
                         op = int.Parse(Console.ReadLine());
 
-                        Professor.
+                        bool sucesso = Professor.ExcluirProfessor(listaProfessor, op);
+                        Console.WriteLine();
+                        if (sucesso) {
+                            Console.WriteLine("Professor Excluido");
+                        } else { 
+                            Console.WriteLine("Erro ao Excluir");   
+                        }
+
+                        Console.WriteLine();
 
                         break;
                 }
