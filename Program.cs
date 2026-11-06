@@ -141,7 +141,16 @@ namespace SistemaEscolar
                                     Console.WriteLine();
                                     break;
                                 }
+
+                                Console.WriteLine("Erro ao Editar. Número não encontrado.");
                             }
+
+                            else
+                            {
+                                Console.WriteLine("Número inválido.");
+                            }
+
+                                Console.Write("Tente novamente (s/n): ");
 
                         } while (Console.ReadLine()?.ToUpper() == "S");
 
