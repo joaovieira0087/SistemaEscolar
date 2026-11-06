@@ -118,7 +118,36 @@ namespace SistemaEscolar
 
                         } while (Console.ReadLine()?.ToUpper() == "S");
 
-                        break;
+                    break;
+
+                    case 4:
+                        Console.Clear();
+                        Console.WriteLine("Editar Professor");
+                        Professor.ListaProfessor(listaProfessor);
+                        Console.WriteLine();
+
+                        bool EditadoComSucesso = false;
+
+                        do
+                        {
+                            Console.Write("Escolha o Professor que sera editado: ");
+                            if (int.TryParse(Console.ReadLine(), out op))
+                            {
+                                EditadoComSucesso = Professor.EditarProfessor(listaProfessor, op);
+
+                                if (EditadoComSucesso)
+                                {
+                                    Console.WriteLine("Professor editado com sucesso!");
+                                    Console.WriteLine();
+                                    break;
+                                }
+                            }
+
+                        } while (Console.ReadLine()?.ToUpper() == "S");
+
+
+
+                    break;
                 }
             }
         }
