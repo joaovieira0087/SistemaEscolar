@@ -14,10 +14,11 @@ namespace SistemaEscolar
         {
             List<Professor> listaProfessor = new List<Professor>();
             RegrasBasicas regrasBasicas = new RegrasBasicas();
+            int op = 0;
 
-            while (true)
+            while (op != 5)
             {
-                int op;
+                
                 Console.WriteLine("1 - Cadastrar Professor");
                 Console.WriteLine("2 - Lista Professor");
                 Console.WriteLine("3 - Excluir Professor");
@@ -154,9 +155,6 @@ namespace SistemaEscolar
                                 Console.Write("Tente novamente (s/n): ");
 
                         } while (Console.ReadLine()?.ToUpper() == "S");
-
-
-
                     break;
                 }
             }
