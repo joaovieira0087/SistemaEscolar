@@ -156,6 +156,10 @@ namespace SistemaEscolar
 
                         } while (Console.ReadLine()?.ToUpper() == "S");
                     break;
+
+                    case 5:
+                        Console.WriteLine("Até logo");
+                    break;
                 }
             }
         }
