@@ -24,7 +24,7 @@ namespace SistemaEscolar
                 Console.WriteLine("3 - Excluir Professor");
                 Console.WriteLine("4 - Editar Professor");
                 Console.WriteLine("5 - Editar Campos específicos Professor");
-                Console.WriteLine("5 - Sair");
+                Console.WriteLine("6 - Sair");
                 Console.WriteLine(regrasBasicas.Espacamento());
                 Console.Write("Opção: ");
                 op = int.Parse(Console.ReadLine());
@@ -159,6 +159,43 @@ namespace SistemaEscolar
                     break;
 
                     case 5:
+                        Console.Clear();
+                        Console.WriteLine("Editar Professor");
+                        Professor.ListaProfessor(listaProfessor);
+                        Console.WriteLine();
+
+                        EditadoComSucesso = false;
+
+                        do
+                        {
+                            Console.Write("Escolha o Professor que sera editado: ");
+                            if (int.TryParse(Console.ReadLine(), out op))
+                            {
+                                EditadoComSucesso = Professor.  EditarProfessorCampo(listaProfessor, op);
+
+                                if (EditadoComSucesso)
+                                {
+                                    Console.WriteLine("Professor editado com sucesso!");
+                                    Console.WriteLine();
+                                    break;
+                                }
+
+                                Console.WriteLine("Erro ao Editar. Número não encontrado.");
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("Número inválido.");
+                            }
+
+                            Console.Write("Tente novamente (s/n): ");
+
+                        } while (Console.ReadLine()?.ToUpper() == "S");
+                        break;
+
+                        break;
+
+                    case 6:
                         Console.WriteLine("Até logo");
                     break;
                 }

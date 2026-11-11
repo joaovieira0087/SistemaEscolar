@@ -51,10 +51,9 @@ namespace SistemaEscolar
             int opcao = op - 1;
             if (opcao >= 0 && opcao < professors.Count)
             {
-                RegrasBasicas regrasBasicas = new RegrasBasicas();
                 Console.Clear();
-                Console.WriteLine();
-                Console.Write("nome: ");
+                Console.WriteLine("Nome:" + professors[opcao].NomeProfessor);
+                RegrasBasicas regrasBasicas = new RegrasBasicas();
                 string Nome = Console.ReadLine();
                 Console.WriteLine(regrasBasicas.Espacamento());
                 Console.Write("Diciplina: ");
@@ -97,6 +96,20 @@ namespace SistemaEscolar
             }
 
             return false;
+        }
+
+        public static bool EditarProfessorCampo(List<Professor> professors, int op)
+        {
+            int opcao = op - 1;
+            if (opcao >= 0 && opcao < professors.Count)
+            {
+                Console.Clear();
+                Console.WriteLine("Nome:" + professors[opcao].NomeProfessor);
+                string Nome = Console.ReadLine();
+                professors[opcao].NomeProfessor = Nome;
+            }
+
+            return true;
         }
 
         public static void ListaProfessor(List<Professor> professor)
