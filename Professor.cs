@@ -52,8 +52,8 @@ namespace SistemaEscolar
             if (opcao >= 0 && opcao < professors.Count)
             {
                 RegrasBasicas regrasBasicas = new RegrasBasicas();
-
                 Console.Clear();
+                Console.WriteLine();
                 Console.Write("nome: ");
                 string Nome = Console.ReadLine();
                 Console.WriteLine(regrasBasicas.Espacamento());

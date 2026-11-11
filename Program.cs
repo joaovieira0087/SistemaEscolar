@@ -23,6 +23,7 @@ namespace SistemaEscolar
                 Console.WriteLine("2 - Lista Professor");
                 Console.WriteLine("3 - Excluir Professor");
                 Console.WriteLine("4 - Editar Professor");
+                Console.WriteLine("5 - Editar Campos específicos Professor");
                 Console.WriteLine("5 - Sair");
                 Console.WriteLine(regrasBasicas.Espacamento());
                 Console.Write("Opção: ");
