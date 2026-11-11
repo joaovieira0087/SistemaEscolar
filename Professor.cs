@@ -10,6 +10,7 @@ namespace SistemaEscolar
 {
      public class Professor
      {
+
         public string NomeProfessor { get; set; }
         public string Diciplina { get; set; }
         public int Idade { get; set; }
@@ -100,10 +101,13 @@ namespace SistemaEscolar
 
         public static bool EditarProfessorCampo(List<Professor> professors, int op)
         {
+            
             int opcao = op - 1;
             if (opcao >= 0 && opcao < professors.Count)
             {
+                RegrasBasicas regrasBasicas = new RegrasBasicas();
                 Console.Clear();
+                Console.WriteLine(regrasBasicas.Espacamento());
                 Console.WriteLine("Nome:" + professors[opcao].NomeProfessor);
                 string Nome = Console.ReadLine();
                 professors[opcao].NomeProfessor = Nome;
